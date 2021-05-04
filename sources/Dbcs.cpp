@@ -27,18 +27,13 @@ void Dbcs::init_log(std::string log_str)
   {
     sink_console->set_filter(
         boost::log::trivial::severity >= boost::log::trivial::info);
-  } else
-      if (log_str == "error")
-  {
+  } else if (log_str == "error") {
     sink_console->set_filter(
         boost::log::trivial::severity >= boost::log::trivial::error);
-  } else
-      if (log_str == "warning")
-  {
+  } else if (log_str == "warning") {
     sink_console->set_filter(
         boost::log::trivial::severity >= boost::log::trivial::warning);
-  } else
-  {
+  } else {
     std::runtime_error("Invalid trivial");
   }
   boost::log::add_common_attributes();
@@ -98,8 +93,7 @@ void Dbcs::out_info_rocksdb(rocksdb::DB* db, std::string log_str)
                               << "] data: [" << it->value().ToString() << "]"
                               << std::endl;
     }
-  } else if (log_str == "error")
-  {
+  } else if (log_str == "error") {
     for (it->SeekToFirst(); it->Valid(); it->Next())
     {
       BOOST_LOG_TRIVIAL(error) << std::endl
@@ -107,8 +101,7 @@ void Dbcs::out_info_rocksdb(rocksdb::DB* db, std::string log_str)
                               << "] data: [" << it->value().ToString() << "]"
                               << std::endl;
     }
-  } else if (log_str == "warning")
-  {
+  } else if (log_str == "warning") {
     for (it->SeekToFirst(); it->Valid(); it->Next())
     {
       BOOST_LOG_TRIVIAL(warning) << std::endl
