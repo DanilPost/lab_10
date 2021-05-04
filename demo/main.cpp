@@ -42,7 +42,6 @@ int main(int argc, char *argv[]) {
     Status s = DB::Open(options, db_path, &db);
     new_dbcs.create_start_db(db, s);
     new_dbcs.init_log(log_level);
-    new_dbcs.out_info_rocksdb(db, log_level);
     new_dbcs.producer(thread_count, db, output, log_level);
   }
   catch (std::exception& ex)

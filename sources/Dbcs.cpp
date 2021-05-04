@@ -27,11 +27,13 @@ void Dbcs::init_log(std::string log_str)
   {
     sink_console->set_filter(
         boost::log::trivial::severity >= boost::log::trivial::info);
-  } else if (log_str == "error")
+  } else
+      if (log_str == "error")
   {
     sink_console->set_filter(
         boost::log::trivial::severity >= boost::log::trivial::error);
-  } else if (log_str == "warning")
+  } else
+      if (log_str == "warning")
   {
     sink_console->set_filter(
         boost::log::trivial::severity >= boost::log::trivial::warning);

@@ -1,7 +1,7 @@
 // Copyright 2021 Danil Postvaykin <postvaykin01@mail.ru>
 
-#ifndef INCLUDE_HEADER_HPP_
-#define INCLUDE_HEADER_HPP_
+#ifndef INCLUDE_DBCS_HPP_
+#define INCLUDE_DBCS_HPP_
 
 #include <picosha2.h>
 #include <ThreadPool.hpp>
@@ -34,4 +34,4 @@ class Dbcs
   ~Dbcs();
 };
 
-#endif // INCLUDE_HEADER_HPP_
+#endif // INCLUDE_DBCS_HPP_
